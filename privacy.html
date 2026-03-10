@@ -1,81 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" data-lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Univermag</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; background: #fafafa; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px; }
-    h1 { font-size: 28px; margin-bottom: 8px; }
-    h2 { font-size: 18px; margin-top: 28px; margin-bottom: 8px; }
-    p, li { margin-bottom: 12px; color: #333; }
-    ul { padding-left: 24px; }
-    a { color: #4a6cf7; }
-    .updated { color: #666; font-size: 14px; margin-bottom: 32px; }
-    nav { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e0e0e0; font-size: 14px; }
-  </style>
+  <script>(function(){var d=document.documentElement,t=localStorage.getItem('uvm-theme');if(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)t='dark';if(t)d.setAttribute('data-theme',t);var l=localStorage.getItem('uvm-lang');if(!l)l=navigator.language&&navigator.language.startsWith('ru')?'ru':'en';d.setAttribute('data-lang',l);d.lang=l})()</script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: March 10, 2026</p>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Univermag</a>
+      <nav class="nav">
+        <a href="privacy.html" aria-current="page"><span class="ru">Конфиденциальность</span><span class="en">Privacy</span></a>
+        <a href="terms.html"><span class="ru">Условия</span><span class="en">Terms</span></a>
+        <a href="support.html"><span class="ru">Поддержка</span><span class="en">Support</span></a>
+      </nav>
+      <div class="controls">
+        <button class="ctrl-btn" onclick="toggleTheme()" aria-label="Toggle theme"><span id="themeIcon">&#x263E;</span></button>
+        <button class="ctrl-btn lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      </div>
+    </div>
+  </header>
 
-    <p>Univermag ("the Add-on") is a Google Sheets&#8482; add-on developed by Daniil Burdygin. This privacy policy describes how the Add-on handles user data.</p>
+  <main class="container">
+    <div class="page-header">
+      <h1><span class="ru">Политика конфиденциальности</span><span class="en">Privacy Policy</span></h1>
+      <p class="meta">
+        <span class="ru">Последнее обновление: 10 марта 2026</span>
+        <span class="en">Last updated: March 10, 2026</span>
+      </p>
+    </div>
 
-    <h2>Data Collection</h2>
-    <p>The Add-on does <strong>not</strong> collect, store, or transmit personal data to any external servers. All processing happens within the user's Google Apps Script environment.</p>
+    <div class="content">
+      <p>
+        <span class="ru">Univermag (&laquo;Расширение&raquo;) &mdash; это расширение Google Sheets&#8482;, разработанное Daniil Burdygin. Настоящая политика конфиденциальности описывает, как Расширение обрабатывает данные пользователей.</span>
+        <span class="en">Univermag (&ldquo;the Add-on&rdquo;) is a Google Sheets&#8482; add-on developed by Daniil Burdygin. This privacy policy describes how the Add-on handles user data.</span>
+      </p>
 
-    <h2>Data Stored Locally</h2>
-    <p>The following data is stored in Google Apps Script UserProperties (accessible only to the individual user):</p>
-    <ul>
-      <li><strong>Wildberries API tokens</strong> — provided by the user for API access. Stored securely in UserProperties and never shared.</li>
-      <li><strong>Account names</strong> — user-defined labels for their Wildberries accounts.</li>
-      <li><strong>Schedule configuration</strong> — auto-export settings (frequency, time).</li>
-      <li><strong>Report history</strong> — last 6 report execution results (report name, row count, timestamp).</li>
-    </ul>
+      <h2><span class="ru">Сбор данных</span><span class="en">Data Collection</span></h2>
+      <p>
+        <span class="ru">Расширение <strong>не</strong> собирает, не хранит и не передаёт персональные данные на внешние серверы. Вся обработка происходит в среде Google Apps Script пользователя.</span>
+        <span class="en">The Add-on does <strong>not</strong> collect, store, or transmit personal data to any external servers. All processing happens within the user's Google Apps Script environment.</span>
+      </p>
 
-    <h2>Data from Wildberries API</h2>
-    <p>The Add-on fetches analytics data from the Wildberries API using tokens provided by the user. This data is written directly into the user's Google Sheets&#8482; spreadsheet. The Add-on does not store, cache, or forward this data to any third party.</p>
+      <h2><span class="ru">Данные, хранящиеся локально</span><span class="en">Data Stored Locally</span></h2>
+      <p>
+        <span class="ru">Следующие данные хранятся в Google Apps Script UserProperties (доступны только конкретному пользователю):</span>
+        <span class="en">The following data is stored in Google Apps Script UserProperties (accessible only to the individual user):</span>
+      </p>
+      <ul>
+        <li><strong><span class="ru">API-токены Wildberries</span><span class="en">Wildberries API tokens</span></strong> — <span class="ru">предоставленные пользователем для доступа к API. Хранятся в UserProperties и никогда не передаются третьим лицам.</span><span class="en">provided by the user for API access. Stored securely in UserProperties and never shared.</span></li>
+        <li><strong><span class="ru">Названия аккаунтов</span><span class="en">Account names</span></strong> — <span class="ru">пользовательские метки для аккаунтов Wildberries.</span><span class="en">user-defined labels for their Wildberries accounts.</span></li>
+        <li><strong><span class="ru">Настройки расписания</span><span class="en">Schedule configuration</span></strong> — <span class="ru">параметры автовыгрузки (частота, время).</span><span class="en">auto-export settings (frequency, time).</span></li>
+        <li><strong><span class="ru">История отчётов</span><span class="en">Report history</span></strong> — <span class="ru">последние 6 результатов выгрузки (название, количество строк, время).</span><span class="en">last 6 report execution results (report name, row count, timestamp).</span></li>
+      </ul>
 
-    <h2>Google User Data</h2>
-    <p>The Add-on requests the following Google OAuth scopes:</p>
-    <ul>
-      <li><code>spreadsheets.currentonly</code> — read/write access to the current spreadsheet only</li>
-      <li><code>script.external_request</code> — to make HTTP requests to the Wildberries API</li>
-      <li><code>script.scriptapp</code> — to create time-based triggers for scheduled exports</li>
-      <li><code>userinfo.email</code> — to identify the user for email notifications</li>
-    </ul>
-    <p>The Add-on does not access any other Google services or data beyond the scopes listed above.</p>
+      <h2><span class="ru">Данные из Wildberries API</span><span class="en">Data from Wildberries API</span></h2>
+      <p>
+        <span class="ru">Расширение получает аналитические данные из Wildberries API с помощью токенов, предоставленных пользователем. Эти данные записываются непосредственно в таблицу Google Sheets&#8482; пользователя. Расширение не хранит, не кэширует и не пересылает эти данные третьим лицам.</span>
+        <span class="en">The Add-on fetches analytics data from the Wildberries API using tokens provided by the user. This data is written directly into the user's Google Sheets&#8482; spreadsheet. The Add-on does not store, cache, or forward this data to any third party.</span>
+      </p>
 
-    <h2>Analytics</h2>
-    <p>The Add-on sends anonymous usage events (report type, row count, NPS score) to Google Analytics via the Measurement Protocol. No personal information, API tokens, or spreadsheet content is included in these events.</p>
+      <h2><span class="ru">Данные Google-аккаунта</span><span class="en">Google User Data</span></h2>
+      <p>
+        <span class="ru">Расширение запрашивает следующие OAuth-разрешения Google:</span>
+        <span class="en">The Add-on requests the following Google OAuth scopes:</span>
+      </p>
+      <ul>
+        <li><code>spreadsheets.currentonly</code> — <span class="ru">чтение/запись только в текущей таблице</span><span class="en">read/write access to the current spreadsheet only</span></li>
+        <li><code>script.external_request</code> — <span class="ru">HTTP-запросы к Wildberries API</span><span class="en">to make HTTP requests to the Wildberries API</span></li>
+        <li><code>script.scriptapp</code> — <span class="ru">создание триггеров для автовыгрузки по расписанию</span><span class="en">to create time-based triggers for scheduled exports</span></li>
+        <li><code>userinfo.email</code> — <span class="ru">идентификация пользователя для email-уведомлений</span><span class="en">to identify the user for email notifications</span></li>
+      </ul>
+      <p>
+        <span class="ru">Расширение не обращается к другим сервисам или данным Google, кроме перечисленных выше.</span>
+        <span class="en">The Add-on does not access any other Google services or data beyond the scopes listed above.</span>
+      </p>
 
-    <h2>Third-Party Services</h2>
-    <p>The Add-on communicates only with:</p>
-    <ul>
-      <li><strong>Wildberries API</strong> (seller-analytics-api.wildberries.ru, statistics-api.wildberries.ru, content-api.wildberries.ru, marketplace-api.wildberries.ru, advert-api.wildberries.ru, feedbacks-api.wildberries.ru, common-api.wildberries.ru) — to fetch seller analytics data</li>
-      <li><strong>Google Analytics</strong> (google-analytics.com) — anonymous usage tracking</li>
-    </ul>
+      <h2><span class="ru">Аналитика</span><span class="en">Analytics</span></h2>
+      <p>
+        <span class="ru">Расширение отправляет анонимные события использования (тип отчёта, количество строк, NPS-оценка) в Google Analytics через Measurement Protocol. Персональные данные, API-токены и содержимое таблицы не включаются в эти события.</span>
+        <span class="en">The Add-on sends anonymous usage events (report type, row count, NPS score) to Google Analytics via the Measurement Protocol. No personal information, API tokens, or spreadsheet content is included in these events.</span>
+      </p>
 
-    <h2>Data Deletion</h2>
-    <p>Users can delete all stored data at any time by removing their API tokens from the Add-on settings. Uninstalling the Add-on removes all UserProperties data.</p>
+      <h2><span class="ru">Сторонние сервисы</span><span class="en">Third-Party Services</span></h2>
+      <p>
+        <span class="ru">Расширение взаимодействует только с:</span>
+        <span class="en">The Add-on communicates only with:</span>
+      </p>
+      <ul>
+        <li><strong>Wildberries API</strong> (seller-analytics-api.wildberries.ru, statistics-api.wildberries.ru, content-api.wildberries.ru, marketplace-api.wildberries.ru, advert-api.wildberries.ru, feedbacks-api.wildberries.ru, common-api.wildberries.ru) — <span class="ru">получение аналитических данных</span><span class="en">to fetch seller analytics data</span></li>
+        <li><strong>Google Analytics</strong> (google-analytics.com) — <span class="ru">анонимная аналитика использования</span><span class="en">anonymous usage tracking</span></li>
+      </ul>
 
-    <h2>Children's Privacy</h2>
-    <p>The Add-on is not directed at children under 13 and does not knowingly collect data from children.</p>
+      <h2><span class="ru">Удаление данных</span><span class="en">Data Deletion</span></h2>
+      <p>
+        <span class="ru">Пользователь может удалить все сохранённые данные в любой момент, удалив свои API-токены в настройках расширения. При удалении расширения все данные UserProperties удаляются автоматически.</span>
+        <span class="en">Users can delete all stored data at any time by removing their API tokens from the Add-on settings. Uninstalling the Add-on removes all UserProperties data.</span>
+      </p>
 
-    <h2>Changes to This Policy</h2>
-    <p>This policy may be updated from time to time. The "Last updated" date at the top will reflect the most recent revision.</p>
+      <h2><span class="ru">Конфиденциальность детей</span><span class="en">Children's Privacy</span></h2>
+      <p>
+        <span class="ru">Расширение не предназначено для детей младше 13 лет и не собирает данные о детях.</span>
+        <span class="en">The Add-on is not directed at children under 13 and does not knowingly collect data from children.</span>
+      </p>
 
-    <h2>Contact</h2>
-    <p>For questions about this privacy policy, contact: <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></p>
+      <h2><span class="ru">Изменения политики</span><span class="en">Changes to This Policy</span></h2>
+      <p>
+        <span class="ru">Настоящая политика может обновляться. Дата последнего обновления указана вверху страницы.</span>
+        <span class="en">This policy may be updated from time to time. The &ldquo;Last updated&rdquo; date at the top will reflect the most recent revision.</span>
+      </p>
 
-    <nav>
-      <a href="index.html">Home</a> &middot;
-      <a href="terms.html">Terms of Service</a> &middot;
-      <a href="support.html">Support</a>
-    </nav>
-  </div>
+      <h2><span class="ru">Контакты</span><span class="en">Contact</span></h2>
+      <p>
+        <span class="ru">По вопросам конфиденциальности: <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></span>
+        <span class="en">For questions about this privacy policy, contact: <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></span>
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-copy">&copy; 2026 Daniil Burdygin</span>
+      <div class="footer-links">
+        <a href="index.html"><span class="ru">Главная</span><span class="en">Home</span></a>
+        <a href="terms.html"><span class="ru">Условия</span><span class="en">Terms</span></a>
+        <a href="support.html"><span class="ru">Поддержка</span><span class="en">Support</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,62 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" data-lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support — Univermag</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; background: #fafafa; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px; }
-    h1 { font-size: 28px; margin-bottom: 8px; }
-    h2 { font-size: 18px; margin-top: 28px; margin-bottom: 8px; }
-    p, li { margin-bottom: 12px; color: #333; }
-    ul { padding-left: 24px; }
-    a { color: #4a6cf7; }
-    .subtitle { color: #666; font-size: 16px; margin-bottom: 32px; }
-    .contact-card { padding: 20px; background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; margin-bottom: 24px; }
-    .contact-card h2 { margin-top: 0; }
-    nav { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e0e0e0; font-size: 14px; }
-  </style>
+  <script>(function(){var d=document.documentElement,t=localStorage.getItem('uvm-theme');if(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)t='dark';if(t)d.setAttribute('data-theme',t);var l=localStorage.getItem('uvm-lang');if(!l)l=navigator.language&&navigator.language.startsWith('ru')?'ru':'en';d.setAttribute('data-lang',l);d.lang=l})()</script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Support</h1>
-    <p class="subtitle">Get help with Univermag Google Sheets&#8482; Add-on</p>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Univermag</a>
+      <nav class="nav">
+        <a href="privacy.html"><span class="ru">Конфиденциальность</span><span class="en">Privacy</span></a>
+        <a href="terms.html"><span class="ru">Условия</span><span class="en">Terms</span></a>
+        <a href="support.html" aria-current="page"><span class="ru">Поддержка</span><span class="en">Support</span></a>
+      </nav>
+      <div class="controls">
+        <button class="ctrl-btn" onclick="toggleTheme()" aria-label="Toggle theme"><span id="themeIcon">&#x263E;</span></button>
+        <button class="ctrl-btn lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      </div>
+    </div>
+  </header>
 
-    <div class="contact-card">
-      <h2>Contact the Developer</h2>
-      <p>For bug reports, feature requests, or any questions about the Add-on:</p>
-      <p><strong>Email:</strong> <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></p>
-      <p>We typically respond within 1-2 business days.</p>
+  <main class="container">
+    <div class="page-header">
+      <h1><span class="ru">Поддержка</span><span class="en">Support</span></h1>
+      <p class="meta">
+        <span class="ru">Помощь по расширению Univermag для Google Sheets&#8482;</span>
+        <span class="en">Help with the Univermag Google Sheets&#8482; Add-on</span>
+      </p>
     </div>
 
-    <h2>Frequently Asked Questions</h2>
+    <div class="content">
+      <div class="contact-card">
+        <h2><span class="ru">Связаться с разработчиком</span><span class="en">Contact the Developer</span></h2>
+        <p>
+          <span class="ru">Баг-репорты, запросы на фичи и любые вопросы по расширению:</span>
+          <span class="en">For bug reports, feature requests, or any questions about the add-on:</span>
+        </p>
+        <div class="contact-links">
+          <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a>
+          <a href="https://github.com/daniil-burdygin" target="_blank">GitHub</a>
+          <a href="https://t.me/daniil_burdygin" target="_blank">Telegram</a>
+        </div>
+        <p style="margin-top:12px;font-size:14px;color:var(--text-sec)">
+          <span class="ru">Обычно отвечаю в течение 1-2 рабочих дней.</span>
+          <span class="en">We typically respond within 1-2 business days.</span>
+        </p>
+      </div>
 
-    <h2>How do I get a Wildberries API token?</h2>
-    <p>Go to <a href="https://seller.wildberries.ru/api-integrations" target="_blank">seller.wildberries.ru/api-integrations</a>, create a new API key, and select the required token categories (Analytics, Statistics, Content, Marketplace) depending on which reports you need.</p>
+      <h2><span class="ru">Часто задаваемые вопросы</span><span class="en">FAQ</span></h2>
 
-    <h2>Which token categories do I need?</h2>
-    <ul>
-      <li><strong>Analytics</strong> — Sales Funnel, Paid Storage, WB Warehouse Remains, Region Sales</li>
-      <li><strong>Statistics</strong> — Orders, Sales, Stocks, Financial Report</li>
-      <li><strong>Content</strong> — Product Cards</li>
-      <li><strong>Marketplace</strong> — Warehouses</li>
-      <li><strong>Promotion</strong> — Ad Campaigns</li>
-      <li><strong>Feedbacks</strong> — Reviews</li>
-    </ul>
+      <details>
+        <summary>
+          <span class="ru">Как получить API-токен Wildberries?</span>
+          <span class="en">How do I get a Wildberries API token?</span>
+        </summary>
+        <div class="faq-body">
+          <p>
+            <span class="ru">Перейдите на <a href="https://seller.wildberries.ru/api-integrations" target="_blank">seller.wildberries.ru/api-integrations</a>, создайте новый API-ключ и выберите нужные категории токена (Аналитика, Статистика, Контент, Маркетплейс) в зависимости от того, какие отчёты вам нужны.</span>
+            <span class="en">Go to <a href="https://seller.wildberries.ru/api-integrations" target="_blank">seller.wildberries.ru/api-integrations</a>, create a new API key, and select the required token categories (Analytics, Statistics, Content, Marketplace) depending on which reports you need.</span>
+          </p>
+        </div>
+      </details>
 
-    <h2>The report stopped before finishing. What do I do?</h2>
-    <p>Google Apps Script has a 6-minute execution limit. For large datasets, the Add-on saves progress automatically. You will see a "Resume" banner — click it to continue from where it stopped.</p>
+      <details>
+        <summary>
+          <span class="ru">Какие категории токена нужны?</span>
+          <span class="en">Which token categories do I need?</span>
+        </summary>
+        <div class="faq-body">
+          <ul>
+            <li><strong><span class="ru">Аналитика</span><span class="en">Analytics</span></strong> — <span class="ru">Воронка продаж, Платное хранение, Остатки WB, Продажи по регионам</span><span class="en">Sales Funnel, Paid Storage, WB Warehouse Remains, Region Sales</span></li>
+            <li><strong><span class="ru">Статистика</span><span class="en">Statistics</span></strong> — <span class="ru">Заказы, Продажи, Остатки, Финансовый отчёт</span><span class="en">Orders, Sales, Stocks, Financial Report</span></li>
+            <li><strong><span class="ru">Контент</span><span class="en">Content</span></strong> — <span class="ru">Карточки товаров</span><span class="en">Product Cards</span></li>
+            <li><strong><span class="ru">Маркетплейс</span><span class="en">Marketplace</span></strong> — <span class="ru">Склады</span><span class="en">Warehouses</span></li>
+            <li><strong><span class="ru">Продвижение</span><span class="en">Promotion</span></strong> — <span class="ru">Рекламные кампании</span><span class="en">Ad Campaigns</span></li>
+            <li><strong><span class="ru">Отзывы</span><span class="en">Feedbacks</span></strong> — <span class="ru">Отзывы</span><span class="en">Reviews</span></li>
+          </ul>
+        </div>
+      </details>
 
-    <h2>Can I use multiple Wildberries accounts?</h2>
-    <p>Yes. Add multiple tokens in the Settings tab. Switch between accounts using the dropdown at the top of the sidebar. You can also use "Batch mode" to run a report for all accounts at once.</p>
+      <details>
+        <summary>
+          <span class="ru">Отчёт прервался. Что делать?</span>
+          <span class="en">The report stopped before finishing. What do I do?</span>
+        </summary>
+        <div class="faq-body">
+          <p>
+            <span class="ru">Google Apps Script имеет лимит выполнения 6 минут. Для больших наборов данных расширение сохраняет прогресс автоматически. Вы увидите баннер «Продолжить» — нажмите его, чтобы продолжить с места остановки.</span>
+            <span class="en">Google Apps Script has a 6-minute execution limit. For large datasets, the add-on saves progress automatically. You will see a "Resume" banner — click it to continue from where it stopped.</span>
+          </p>
+        </div>
+      </details>
 
-    <nav>
-      <a href="index.html">Home</a> &middot;
-      <a href="privacy.html">Privacy Policy</a> &middot;
-      <a href="terms.html">Terms of Service</a>
-    </nav>
-  </div>
+      <details>
+        <summary>
+          <span class="ru">Можно ли использовать несколько аккаунтов?</span>
+          <span class="en">Can I use multiple Wildberries accounts?</span>
+        </summary>
+        <div class="faq-body">
+          <p>
+            <span class="ru">Да. Добавьте несколько токенов в настройках. Переключайтесь между аккаунтами через выпадающий список в верхней части панели. Также можно использовать «Пакетный режим» для выгрузки отчёта по всем аккаунтам сразу.</span>
+            <span class="en">Yes. Add multiple tokens in the Settings tab. Switch between accounts using the dropdown at the top of the sidebar. You can also use "Batch mode" to run a report for all accounts at once.</span>
+          </p>
+        </div>
+      </details>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-copy">&copy; 2026 Daniil Burdygin</span>
+      <div class="footer-links">
+        <a href="index.html"><span class="ru">Главная</span><span class="en">Home</span></a>
+        <a href="privacy.html"><span class="ru">Конфиденциальность</span><span class="en">Privacy</span></a>
+        <a href="terms.html"><span class="ru">Условия</span><span class="en">Terms</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

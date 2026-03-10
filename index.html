@@ -1,56 +1,86 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Univermag — Google Sheets Add-on for Wildberries</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; background: #fafafa; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px; }
-    h1 { font-size: 28px; margin-bottom: 8px; }
-    h2 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
-    p { margin-bottom: 16px; color: #333; }
-    a { color: #4a6cf7; }
-    .subtitle { color: #666; font-size: 16px; margin-bottom: 32px; }
-    .features { list-style: none; padding: 0; }
-    .features li { padding: 8px 0; padding-left: 24px; position: relative; }
-    .features li::before { content: "—"; position: absolute; left: 0; color: #999; }
-    nav { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e0e0e0; font-size: 14px; color: #666; }
-    nav a { margin-right: 20px; }
-    .dev-info { margin-top: 32px; padding: 20px; background: #fff; border: 1px solid #e8e8e8; border-radius: 8px; }
-    .dev-info p { margin-bottom: 8px; }
-  </style>
+  <script>(function(){var d=document.documentElement,t=localStorage.getItem('uvm-theme');if(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)t='dark';if(t)d.setAttribute('data-theme',t);var l=localStorage.getItem('uvm-lang');if(!l)l=navigator.language&&navigator.language.startsWith('ru')?'ru':'en';d.setAttribute('data-lang',l);d.lang=l})()</script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Univermag</h1>
-    <p class="subtitle">Google Sheets&#8482; Add-on for Wildberries sellers</p>
-
-    <p>Univermag is a Google Sheets&#8482; add-on that helps Wildberries marketplace sellers export analytics data directly into spreadsheets. It connects to the Wildberries API and fetches reports with a single click.</p>
-
-    <h2>Features</h2>
-    <ul class="features">
-      <li>13 report types: sales funnel, orders, sales, product cards, stocks, paid storage, financial reports, and more</li>
-      <li>Multi-account support with easy token switching</li>
-      <li>Scheduled auto-exports (daily, weekly, monthly)</li>
-      <li>Queue mode for batch report execution</li>
-      <li>Resume interrupted downloads automatically</li>
-      <li>All data stays in your Google Sheets&#8482; — no external servers</li>
-    </ul>
-
-    <div class="dev-info">
-      <h2>Developer</h2>
-      <p><strong>Daniil Burdygin</strong></p>
-      <p>Independent software developer based in Russia, specializing in Google Workspace add-ons and marketplace analytics tools.</p>
-      <p>Contact: <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></p>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Univermag</a>
+      <nav class="nav">
+        <a href="privacy.html"><span class="ru">Конфиденциальность</span><span class="en">Privacy</span></a>
+        <a href="terms.html"><span class="ru">Условия</span><span class="en">Terms</span></a>
+        <a href="support.html"><span class="ru">Поддержка</span><span class="en">Support</span></a>
+      </nav>
+      <div class="controls">
+        <button class="ctrl-btn" onclick="toggleTheme()" aria-label="Toggle theme"><span id="themeIcon">&#x263E;</span></button>
+        <button class="ctrl-btn lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      </div>
     </div>
+  </header>
 
-    <nav>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-      <a href="support.html">Support</a>
-    </nav>
-  </div>
+  <main class="container">
+    <section class="hero">
+      <h1>Univermag</h1>
+      <p class="tagline">
+        <span class="ru">Расширение Google Sheets&#8482; для селлеров Wildberries. Подключите API и получайте аналитику прямо в таблице.</span>
+        <span class="en">Google Sheets&#8482; add-on for Wildberries sellers. Connect your API and get analytics directly in your spreadsheet.</span>
+      </p>
+    </section>
+
+    <section class="features">
+      <div class="feature-card">
+        <h3><span class="ru">13 отчётов</span><span class="en">13 Reports</span></h3>
+        <p><span class="ru">Воронка продаж, заказы, продажи, карточки, склады, хранение, финансы и другие</span><span class="en">Sales funnel, orders, sales, product cards, warehouses, storage, finances, and more</span></p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="ru">Мультиаккаунт</span><span class="en">Multi-account</span></h3>
+        <p><span class="ru">Подключите несколько магазинов и переключайтесь между ними</span><span class="en">Connect multiple stores and switch between them easily</span></p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="ru">Автовыгрузка</span><span class="en">Scheduled Exports</span></h3>
+        <p><span class="ru">Настройте расписание: ежедневно, еженедельно или ежемесячно</span><span class="en">Set up daily, weekly, or monthly auto-exports</span></p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="ru">Очередь отчётов</span><span class="en">Report Queue</span></h3>
+        <p><span class="ru">Выберите несколько отчётов и запустите их последовательно</span><span class="en">Select multiple reports and run them sequentially</span></p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="ru">Автопродолжение</span><span class="en">Auto-resume</span></h3>
+        <p><span class="ru">При превышении лимита выгрузка продолжится автоматически</span><span class="en">Automatically continues if the execution time limit is reached</span></p>
+      </div>
+      <div class="feature-card">
+        <h3><span class="ru">Данные у вас</span><span class="en">Your Data Stays Yours</span></h3>
+        <p><span class="ru">Никаких внешних серверов — все данные остаются в вашей таблице</span><span class="en">No external servers — all data stays in your spreadsheet</span></p>
+      </div>
+    </section>
+
+    <section class="contact-card">
+      <h2><span class="ru">Разработчик</span><span class="en">Developer</span></h2>
+      <p><strong>Daniil Burdygin</strong></p>
+      <div class="contact-links">
+        <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a>
+        <a href="https://github.com/daniil-burdygin" target="_blank">GitHub</a>
+        <a href="https://t.me/daniil_burdygin" target="_blank">Telegram</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-copy">&copy; 2026 Daniil Burdygin</span>
+      <div class="footer-links">
+        <a href="privacy.html"><span class="ru">Конфиденциальность</span><span class="en">Privacy</span></a>
+        <a href="terms.html"><span class="ru">Условия</span><span class="en">Terms</span></a>
+        <a href="support.html"><span class="ru">Поддержка</span><span class="en">Support</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

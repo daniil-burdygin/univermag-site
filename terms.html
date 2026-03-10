@@ -1,74 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" data-lang="ru" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service — Univermag</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; background: #fafafa; }
-    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px; }
-    h1 { font-size: 28px; margin-bottom: 8px; }
-    h2 { font-size: 18px; margin-top: 28px; margin-bottom: 8px; }
-    p, li { margin-bottom: 12px; color: #333; }
-    ul { padding-left: 24px; }
-    a { color: #4a6cf7; }
-    .updated { color: #666; font-size: 14px; margin-bottom: 32px; }
-    nav { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e0e0e0; font-size: 14px; }
-  </style>
+  <script>(function(){var d=document.documentElement,t=localStorage.getItem('uvm-theme');if(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)t='dark';if(t)d.setAttribute('data-theme',t);var l=localStorage.getItem('uvm-lang');if(!l)l=navigator.language&&navigator.language.startsWith('ru')?'ru':'en';d.setAttribute('data-lang',l);d.lang=l})()</script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Terms of Service</h1>
-    <p class="updated">Last updated: March 10, 2026</p>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">Univermag</a>
+      <nav class="nav">
+        <a href="privacy.html"><span class="ru">Конфиденциальность</span><span class="en">Privacy</span></a>
+        <a href="terms.html" aria-current="page"><span class="ru">Условия</span><span class="en">Terms</span></a>
+        <a href="support.html"><span class="ru">Поддержка</span><span class="en">Support</span></a>
+      </nav>
+      <div class="controls">
+        <button class="ctrl-btn" onclick="toggleTheme()" aria-label="Toggle theme"><span id="themeIcon">&#x263E;</span></button>
+        <button class="ctrl-btn lang-btn" id="langToggle" onclick="toggleLang()">EN</button>
+      </div>
+    </div>
+  </header>
 
-    <p>These Terms of Service ("Terms") govern your use of the Univermag Google Sheets&#8482; add-on ("the Add-on") developed by Daniil Burdygin ("the Developer"). By installing or using the Add-on, you agree to these Terms.</p>
+  <main class="container">
+    <div class="page-header">
+      <h1><span class="ru">Условия использования</span><span class="en">Terms of Service</span></h1>
+      <p class="meta">
+        <span class="ru">Последнее обновление: 10 марта 2026</span>
+        <span class="en">Last updated: March 10, 2026</span>
+      </p>
+    </div>
 
-    <h2>1. Description of Service</h2>
-    <p>Univermag is a Google Sheets&#8482; add-on that fetches analytics data from the Wildberries marketplace API and writes it into your spreadsheet. The Add-on is provided free of charge.</p>
+    <div class="content">
+      <p>
+        <span class="ru">Настоящие Условия использования (&laquo;Условия&raquo;) регулируют использование расширения Univermag для Google Sheets&#8482; (&laquo;Расширение&raquo;), разработанного Daniil Burdygin (&laquo;Разработчик&raquo;). Устанавливая или используя Расширение, вы соглашаетесь с настоящими Условиями.</span>
+        <span class="en">These Terms of Service (&ldquo;Terms&rdquo;) govern your use of the Univermag Google Sheets&#8482; add-on (&ldquo;the Add-on&rdquo;) developed by Daniil Burdygin (&ldquo;the Developer&rdquo;). By installing or using the Add-on, you agree to these Terms.</span>
+      </p>
 
-    <h2>2. Requirements</h2>
-    <ul>
-      <li>A Google account with access to Google Sheets&#8482;</li>
-      <li>A valid Wildberries seller API token (obtained from <a href="https://seller.wildberries.ru/api-integrations" target="_blank">seller.wildberries.ru</a>)</li>
-    </ul>
+      <h2><span class="ru">1. Описание сервиса</span><span class="en">1. Description of Service</span></h2>
+      <p>
+        <span class="ru">Univermag &mdash; это расширение Google Sheets&#8482;, которое получает аналитические данные из Wildberries API и записывает их в вашу таблицу. Расширение предоставляется бесплатно.</span>
+        <span class="en">Univermag is a Google Sheets&#8482; add-on that fetches analytics data from the Wildberries marketplace API and writes it into your spreadsheet. The Add-on is provided free of charge.</span>
+      </p>
 
-    <h2>3. User Responsibilities</h2>
-    <ul>
-      <li>You are responsible for safeguarding your Wildberries API tokens.</li>
-      <li>You agree to use the Add-on in compliance with the Wildberries API terms of use and Google Workspace Marketplace policies.</li>
-      <li>You are responsible for the data written to your spreadsheets.</li>
-    </ul>
+      <h2><span class="ru">2. Требования</span><span class="en">2. Requirements</span></h2>
+      <ul>
+        <li><span class="ru">Аккаунт Google с доступом к Google Sheets&#8482;</span><span class="en">A Google account with access to Google Sheets&#8482;</span></li>
+        <li><span class="ru">Действительный API-токен продавца Wildberries (получить на <a href="https://seller.wildberries.ru/api-integrations" target="_blank">seller.wildberries.ru</a>)</span><span class="en">A valid Wildberries seller API token (obtained from <a href="https://seller.wildberries.ru/api-integrations" target="_blank">seller.wildberries.ru</a>)</span></li>
+      </ul>
 
-    <h2>4. Intellectual Property</h2>
-    <p>The Add-on and its source code are the intellectual property of the Developer. You may not copy, modify, distribute, or reverse-engineer the Add-on beyond what is permitted by applicable law.</p>
+      <h2><span class="ru">3. Обязанности пользователя</span><span class="en">3. User Responsibilities</span></h2>
+      <ul>
+        <li><span class="ru">Вы несёте ответственность за сохранность своих API-токенов Wildberries.</span><span class="en">You are responsible for safeguarding your Wildberries API tokens.</span></li>
+        <li><span class="ru">Вы обязуетесь использовать Расширение в соответствии с условиями использования Wildberries API и политиками Google Workspace Marketplace.</span><span class="en">You agree to use the Add-on in compliance with the Wildberries API terms of use and Google Workspace Marketplace policies.</span></li>
+        <li><span class="ru">Вы несёте ответственность за данные, записанные в ваши таблицы.</span><span class="en">You are responsible for the data written to your spreadsheets.</span></li>
+      </ul>
 
-    <h2>5. Disclaimer of Warranties</h2>
-    <p>The Add-on is provided "as is" without warranties of any kind, express or implied. The Developer does not guarantee that the Add-on will be error-free, uninterrupted, or compatible with all configurations.</p>
+      <h2><span class="ru">4. Интеллектуальная собственность</span><span class="en">4. Intellectual Property</span></h2>
+      <p>
+        <span class="ru">Расширение и его исходный код являются интеллектуальной собственностью Разработчика. Вы не вправе копировать, изменять, распространять или декомпилировать Расширение за пределами, допускаемых применимым законодательством.</span>
+        <span class="en">The Add-on and its source code are the intellectual property of the Developer. You may not copy, modify, distribute, or reverse-engineer the Add-on beyond what is permitted by applicable law.</span>
+      </p>
 
-    <h2>6. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by law, the Developer shall not be liable for any indirect, incidental, or consequential damages arising from the use of the Add-on. This includes, but is not limited to, loss of data, loss of profits, or business interruption.</p>
+      <h2><span class="ru">5. Отказ от гарантий</span><span class="en">5. Disclaimer of Warranties</span></h2>
+      <p>
+        <span class="ru">Расширение предоставляется &laquo;как есть&raquo; без каких-либо гарантий, явных или подразумеваемых. Разработчик не гарантирует, что Расширение будет работать без ошибок, непрерывно и совместимо со всеми конфигурациями.</span>
+        <span class="en">The Add-on is provided &ldquo;as is&rdquo; without warranties of any kind, express or implied. The Developer does not guarantee that the Add-on will be error-free, uninterrupted, or compatible with all configurations.</span>
+      </p>
 
-    <h2>7. Wildberries API</h2>
-    <p>The Add-on depends on the Wildberries API, which is operated by Wildberries LLC. The Developer is not affiliated with Wildberries and is not responsible for changes to the Wildberries API, its availability, or its terms of use.</p>
+      <h2><span class="ru">6. Ограничение ответственности</span><span class="en">6. Limitation of Liability</span></h2>
+      <p>
+        <span class="ru">В максимально допустимой законом степени Разработчик не несёт ответственности за любые косвенные, случайные или последующие убытки, возникшие в связи с использованием Расширения, включая, но не ограничиваясь, потерю данных, упущенную выгоду или перебои в бизнесе.</span>
+        <span class="en">To the maximum extent permitted by law, the Developer shall not be liable for any indirect, incidental, or consequential damages arising from the use of the Add-on. This includes, but is not limited to, loss of data, loss of profits, or business interruption.</span>
+      </p>
 
-    <h2>8. Termination</h2>
-    <p>You may stop using the Add-on at any time by uninstalling it. The Developer reserves the right to discontinue the Add-on at any time without prior notice.</p>
+      <h2><span class="ru">7. Wildberries API</span><span class="en">7. Wildberries API</span></h2>
+      <p>
+        <span class="ru">Расширение зависит от Wildberries API, который управляется Wildberries LLC. Разработчик не аффилирован с Wildberries и не несёт ответственности за изменения в Wildberries API, его доступность или условия использования.</span>
+        <span class="en">The Add-on depends on the Wildberries API, which is operated by Wildberries LLC. The Developer is not affiliated with Wildberries and is not responsible for changes to the Wildberries API, its availability, or its terms of use.</span>
+      </p>
 
-    <h2>9. Changes to Terms</h2>
-    <p>These Terms may be updated from time to time. Continued use of the Add-on after changes constitutes acceptance of the updated Terms.</p>
+      <h2><span class="ru">8. Прекращение использования</span><span class="en">8. Termination</span></h2>
+      <p>
+        <span class="ru">Вы можете прекратить использование Расширения в любое время, удалив его. Разработчик оставляет за собой право прекратить предоставление Расширения в любое время без предварительного уведомления.</span>
+        <span class="en">You may stop using the Add-on at any time by uninstalling it. The Developer reserves the right to discontinue the Add-on at any time without prior notice.</span>
+      </p>
 
-    <h2>10. Google Trademarks</h2>
-    <p>Google Sheets&#8482; is a trademark of Google LLC. The Add-on is not endorsed by or affiliated with Google LLC.</p>
+      <h2><span class="ru">9. Изменения условий</span><span class="en">9. Changes to Terms</span></h2>
+      <p>
+        <span class="ru">Настоящие Условия могут обновляться. Продолжение использования Расширения после внесения изменений означает принятие обновлённых Условий.</span>
+        <span class="en">These Terms may be updated from time to time. Continued use of the Add-on after changes constitutes acceptance of the updated Terms.</span>
+      </p>
 
-    <h2>11. Contact</h2>
-    <p>For questions about these Terms, contact: <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></p>
+      <h2><span class="ru">10. Товарные знаки Google</span><span class="en">10. Google Trademarks</span></h2>
+      <p>
+        <span class="ru">Google Sheets&#8482; является товарным знаком Google LLC. Расширение не одобрено и не аффилировано с Google LLC.</span>
+        <span class="en">Google Sheets&#8482; is a trademark of Google LLC. The Add-on is not endorsed by or affiliated with Google LLC.</span>
+      </p>
 
-    <nav>
-      <a href="index.html">Home</a> &middot;
-      <a href="privacy.html">Privacy Policy</a> &middot;
-      <a href="support.html">Support</a>
-    </nav>
-  </div>
+      <h2><span class="ru">11. Контакты</span><span class="en">11. Contact</span></h2>
+      <p>
+        <span class="ru">По вопросам об условиях использования: <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></span>
+        <span class="en">For questions about these Terms, contact: <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></span>
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-copy">&copy; 2026 Daniil Burdygin</span>
+      <div class="footer-links">
+        <a href="index.html"><span class="ru">Главная</span><span class="en">Home</span></a>
+        <a href="privacy.html"><span class="ru">Конфиденциальность</span><span class="en">Privacy</span></a>
+        <a href="support.html"><span class="ru">Поддержка</span><span class="en">Support</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
