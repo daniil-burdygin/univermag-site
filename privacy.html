@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Univermag</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1a1a1a; line-height: 1.6; background: #fafafa; }
+    .container { max-width: 720px; margin: 0 auto; padding: 40px 24px; }
+    h1 { font-size: 28px; margin-bottom: 8px; }
+    h2 { font-size: 18px; margin-top: 28px; margin-bottom: 8px; }
+    p, li { margin-bottom: 12px; color: #333; }
+    ul { padding-left: 24px; }
+    a { color: #4a6cf7; }
+    .updated { color: #666; font-size: 14px; margin-bottom: 32px; }
+    nav { margin-top: 40px; padding-top: 24px; border-top: 1px solid #e0e0e0; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: March 10, 2026</p>
+
+    <p>Univermag ("the Add-on") is a Google Sheets&#8482; add-on developed by Daniil Burdygin. This privacy policy describes how the Add-on handles user data.</p>
+
+    <h2>Data Collection</h2>
+    <p>The Add-on does <strong>not</strong> collect, store, or transmit personal data to any external servers. All processing happens within the user's Google Apps Script environment.</p>
+
+    <h2>Data Stored Locally</h2>
+    <p>The following data is stored in Google Apps Script UserProperties (accessible only to the individual user):</p>
+    <ul>
+      <li><strong>Wildberries API tokens</strong> — provided by the user for API access. Stored securely in UserProperties and never shared.</li>
+      <li><strong>Account names</strong> — user-defined labels for their Wildberries accounts.</li>
+      <li><strong>Schedule configuration</strong> — auto-export settings (frequency, time).</li>
+      <li><strong>Report history</strong> — last 6 report execution results (report name, row count, timestamp).</li>
+    </ul>
+
+    <h2>Data from Wildberries API</h2>
+    <p>The Add-on fetches analytics data from the Wildberries API using tokens provided by the user. This data is written directly into the user's Google Sheets&#8482; spreadsheet. The Add-on does not store, cache, or forward this data to any third party.</p>
+
+    <h2>Google User Data</h2>
+    <p>The Add-on requests the following Google OAuth scopes:</p>
+    <ul>
+      <li><code>spreadsheets.currentonly</code> — read/write access to the current spreadsheet only</li>
+      <li><code>script.external_request</code> — to make HTTP requests to the Wildberries API</li>
+      <li><code>script.scriptapp</code> — to create time-based triggers for scheduled exports</li>
+      <li><code>userinfo.email</code> — to identify the user for email notifications</li>
+    </ul>
+    <p>The Add-on does not access any other Google services or data beyond the scopes listed above.</p>
+
+    <h2>Analytics</h2>
+    <p>The Add-on sends anonymous usage events (report type, row count, NPS score) to Google Analytics via the Measurement Protocol. No personal information, API tokens, or spreadsheet content is included in these events.</p>
+
+    <h2>Third-Party Services</h2>
+    <p>The Add-on communicates only with:</p>
+    <ul>
+      <li><strong>Wildberries API</strong> (seller-analytics-api.wildberries.ru, statistics-api.wildberries.ru, content-api.wildberries.ru, marketplace-api.wildberries.ru, advert-api.wildberries.ru, feedbacks-api.wildberries.ru, common-api.wildberries.ru) — to fetch seller analytics data</li>
+      <li><strong>Google Analytics</strong> (google-analytics.com) — anonymous usage tracking</li>
+    </ul>
+
+    <h2>Data Deletion</h2>
+    <p>Users can delete all stored data at any time by removing their API tokens from the Add-on settings. Uninstalling the Add-on removes all UserProperties data.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>The Add-on is not directed at children under 13 and does not knowingly collect data from children.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>This policy may be updated from time to time. The "Last updated" date at the top will reflect the most recent revision.</p>
+
+    <h2>Contact</h2>
+    <p>For questions about this privacy policy, contact: <a href="mailto:daniil.burdygin@gmail.com">daniil.burdygin@gmail.com</a></p>
+
+    <nav>
+      <a href="index.html">Home</a> &middot;
+      <a href="terms.html">Terms of Service</a> &middot;
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</body>
+</html>
